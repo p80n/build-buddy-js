@@ -9,11 +9,17 @@ const git = simpleGit({ baseDir: '/workdir' });
 
 
 exports.build = function(req, res) {
-  log.debug(req);
-  log.debug("====================================================================================================");
-  log.debug(req.body);
+  log.debug('----------------------------------------------------------------------------------------------------');
+  log.debug('%O', req.body);
+  log.debug('----------------------------------------------------------------------------------------------------');
+  log.debug(`url: ${req.url}`);
+  log.debug('####################################################################################################');
   try{
     const repository = req.body.repository;
+    log.debug("REPOSITORY:");
+    log.debug('%O', repository);
+    log.debug("....................................................................................................");
+    log.
     fs.access(`/workdir/${repository.name}/`, function(error) {
       if (error) {
         console.log(`Cloning ${repository.clone_url}`);

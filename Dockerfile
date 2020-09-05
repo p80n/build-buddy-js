@@ -8,7 +8,7 @@ COPY --chown=node:node . /app
 
 RUN mkdir /workdir && \
     chown node:node /workdir /app && \
-    apk add git libseccomp krb5-libs && \
+    apk add git libseccomp && \
     apk add img --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
 #USER $USER
