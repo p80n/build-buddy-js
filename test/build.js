@@ -33,7 +33,7 @@ describe('/build', () => {
   });
 
   describe('POST from GitHub', function() {
-    this.timeout(20000);
+    this.timeout(60000);
 
     it('triggers an image build', (done) => {
       chai.request(server)

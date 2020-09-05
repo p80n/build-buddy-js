@@ -4,6 +4,11 @@
  * Module dependencies.
  */
 
+//https://github.com/nodejs/node/issues/4182
+process.on('SIGINT', function() {
+    process.exit();
+});
+
 var app = require('../app');
 var debug = require('debug')('app:server');
 var http = require('http');
